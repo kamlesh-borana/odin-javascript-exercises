@@ -1,12 +1,14 @@
-const removeFromArray = function(array, value) {
+const removeFromArray = function(array, ...valuesToBeRemoved) {
     const clonedArray = [...array];
 
-    const indexOfValue = clonedArray.indexOf(value);
+    valuesToBeRemoved.forEach((value) => {
+        const indexOfValue = clonedArray.indexOf(value);
 
-    // If value found inside the array delete it using the found index
-    if(indexOfValue > -1) {
-        clonedArray.splice(indexOfValue, 1);
-    }
+        // If value found inside the array delete it using the found index
+        if(indexOfValue > -1) {
+            clonedArray.splice(indexOfValue, 1);
+        }
+    })
 
     return clonedArray;
 };

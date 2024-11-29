@@ -3,7 +3,13 @@ const palindromes = function (string) {
         return str.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '');
     }
 
-    const formattedString = removePunctuations(string);
+    function formatString(string) {
+        string = removePunctuations(string);
+        string = string.toLowerCase();
+        return string;
+    }
+
+    const formattedString = formatString(string);
     
     for(let i = 1; i <= Math.floor(formattedString.length / 2); i++) {
         if(formattedString[i - 1] !== formattedString[formattedString.length - i]) {

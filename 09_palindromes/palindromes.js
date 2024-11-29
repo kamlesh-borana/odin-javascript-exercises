@@ -1,6 +1,12 @@
 const palindromes = function (string) {
-    for(let i = 1; i <= Math.floor(string.length / 2); i++) {
-        if(string[i - 1] !== string[string.length - i]) {
+    function removePunctuations(str) {
+        return str.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g, '');
+    }
+
+    const formattedString = removePunctuations(string);
+    
+    for(let i = 1; i <= Math.floor(formattedString.length / 2); i++) {
+        if(formattedString[i - 1] !== formattedString[formattedString.length - i]) {
             return false;
         }
     }

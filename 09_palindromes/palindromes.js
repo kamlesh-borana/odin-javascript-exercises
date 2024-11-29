@@ -6,6 +6,7 @@ const palindromes = function (string) {
     function formatString(string) {
         string = removePunctuations(string);
         string = string.toLowerCase();
+        string = string.replaceAll(" ", "");
         return string;
     }
 
